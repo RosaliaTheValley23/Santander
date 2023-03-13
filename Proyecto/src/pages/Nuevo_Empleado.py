@@ -4,8 +4,11 @@ from datetime import date
 import altair as alt
 import matplotlib.pyplot as plt
 
+current_dir = os.path.dirname(os.path.realpath(__file__)) 
+path_nuevo_empleado = os.path.join(current_dir, 'data//Data_streamlit.xlsx')
 
-data = pd.read_excel("../data/Data_streamlit.xlsx")
+data = pd.read_excel(path_nuevo_empleado)
+
 st.set_page_config(page_title="Santander People Analytics", page_icon="📊")
 st.image("../media_stock/Banco_Santander_Logotipo.png")
 st.header('TheGoodWay')
@@ -15,16 +18,14 @@ st.markdown('---')
 
 
 
-gender = st.selectbox('Gender?', ('Male', 'Female', 'No answer'), key='gender')
-age = st.selectbox('How old are you?', list(range(18, 75, 1)), key='age')
-country = st.selectbox('Where are you from?', ('Spain', 'Other'), key='country')
+gender = st.selectbox('Género', ('Male', 'Female', 'No answer'), key='gender')
+age = st.selectbox('Edad', list(range(18, 75, 1)), key='age')
+country = st.selectbox('País', ('Spain', 'Other'), key='country')
+educ = st.selectbox('Nivel educativo', ('Ninguno', 'Licenciatura', 'Grado','Máster', 'Doctorado') , key='country')
 
 features_button = st.button(label='OK', key='features_button')
 
 if features_button:
-    st.write(f"gender: {gender}")
-    st.write(f"age: {age}")
-    st.write(f"country: {country}")
 
     # Horizontal stacked bar chart
     source = st.session_state.data[['ID_empleado', 'status']]
@@ -55,18 +56,11 @@ if features_button:
     st.write("Porcentaje Accuracy Upskilling")
     st.altair_chart(bars + text + rule)
 
-    certificaciones = pd.read_excel("../data/Certificaciones.xlsx", sheet_name="certificaciones")
-    master = pd.read_excel("../data/Certificaciones.xlsx", sheet_name="master")
-    idiomas = pd.read_excel("../data/Certificaciones.xlsx", sheet_name="idiomas")
-    habilidades = pd.read_excel("../data/Certificaciones.xlsx", sheet_name="habilidades")
-
-
-
-    
-    certificaciones = pd.read_excel("C:/Users/u1132046/OneDrive - IQVIA/Desktop/THE VALLEY/Proyecto/data/Certificaciones.xlsx", sheet_name="certificaciones")
-    master = pd.read_excel("C:/Users/u1132046/OneDrive - IQVIA/Desktop/THE VALLEY/Proyecto/data/Certificaciones.xlsx", sheet_name="master")
-    idiomas = pd.read_excel("C:/Users/u1132046/OneDrive - IQVIA/Desktop/THE VALLEY/Proyecto/data/Certificaciones.xlsx", sheet_name="idiomas")
-    habilidades = pd.read_excel("C:/Users/u1132046/OneDrive - IQVIA/Desktop/THE VALLEY/Proyecto/data/Certificaciones.xlsx", sheet_name="habilidades")
+    certific = os.path.join(current_dir, 'data//Certificaciones.xlsx')
+    certificaciones = pd.read_excel(certific, sheet_name="certificaciones")
+    master = pd.read_excel(certific, sheet_name="master")
+    idiomas = pd.read_excel(certific, sheet_name="idiomas")
+    habilidades = pd.read_excel(certific, sheet_name="habilidades")
 
 
     fig, ax = plt.subplots(2, 2, 
