@@ -53,10 +53,11 @@ if id_button:
     st.write("Porcentaje Accuracy Upskilling")
     st.altair_chart(bars + text + rule)
 
-    certificaciones = pd.read_excel("C:/Users/u1132046/OneDrive - IQVIA/Desktop/THE VALLEY/Proyecto/data/Certificaciones.xlsx", sheet_name="certificaciones")
-    master = pd.read_excel("C:/Users/u1132046/OneDrive - IQVIA/Desktop/THE VALLEY/Proyecto/data/Certificaciones.xlsx", sheet_name="master")
-    idiomas = pd.read_excel("C:/Users/u1132046/OneDrive - IQVIA/Desktop/THE VALLEY/Proyecto/data/Certificaciones.xlsx", sheet_name="idiomas")
-    habilidades = pd.read_excel("C:/Users/u1132046/OneDrive - IQVIA/Desktop/THE VALLEY/Proyecto/data/Certificaciones.xlsx", sheet_name="habilidades")
+    certific = os.path.join(current_dir, 'data//Certificaciones.xlsx')
+    certificaciones = pd.read_excel(certific, sheet_name="certificaciones")
+    master = pd.read_excel(certific, sheet_name="master")
+    idiomas = pd.read_excel(certific, sheet_name="idiomas")
+    habilidades = pd.read_excel(certific, sheet_name="habilidades")
 
 
     fig, ax = plt.subplots(2, 2, 
