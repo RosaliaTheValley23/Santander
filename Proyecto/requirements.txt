@@ -1,5 +1,0 @@
-streamlit
-pandas
-datetime
-altair
-matplotlib.pyplot
