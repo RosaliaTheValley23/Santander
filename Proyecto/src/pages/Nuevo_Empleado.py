@@ -3,6 +3,7 @@ import pandas as pd
 from datetime import date
 import altair as alt
 import matplotlib.pyplot as plt
+import os
 
 current_dir = os.path.dirname(os.path.realpath(__file__)) 
 path_nuevo_empleado = os.path.join(current_dir, 'data//Data_streamlit.xlsx')
