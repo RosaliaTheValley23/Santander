@@ -69,8 +69,11 @@ if features_button_new:
     fig, ax = plt.subplots(2, 2, 
                 figsize=(14, 14))
     ax[0][0].bar(certificaciones['Certificaciones'], certificaciones['Importacia'], color='#EA1D25' )
+    ax[0][0].set_title('Certificaciones')
     ax[0][1].bar(master['Master'], master['Importancia'], color='#EA1D25')
+    ax[0][1].set_title('Master')
     ax[1][0].bar(idiomas['idiomas'], idiomas['Importancia'], color='#EA1D25')
+    ax[1][0].set_title('Idiomas')
     ax[1][1].bar(habilidades['Habilidades'], habilidades['Importancia'], color='#EA1D25')
-
+    ax[1][1].set_title('Habilidades')
     st.pyplot(fig)
