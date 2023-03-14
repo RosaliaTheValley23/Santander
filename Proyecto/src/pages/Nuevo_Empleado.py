@@ -9,7 +9,7 @@ import openpyxl
 # current_dir = os.path.dirname(os.path.realpath(__file__)) 
 # path_nuevo_empleado = os.path.join(current_dir, 'data//Data_streamlit.xlsx')
 
-data = pd.read_excel('/app/santander/Proyecto/data/Data_streamlit.xlsx', engine='openpyxl')
+st.session_state.data = pd.read_excel('/app/santander/Proyecto/data/Data_streamlit.xlsx', engine='openpyxl')
 
 st.set_page_config(page_title="Santander People Analytics", page_icon="📊")
 st.image("/app/santander/Proyecto/media_stock/Banco_Santander_Logotipo.png")
