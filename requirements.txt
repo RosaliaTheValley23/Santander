@@ -3,4 +3,4 @@ pandas
 datetime
 plotly
 altair
-matplotlib.pyplot
+matplotlib
