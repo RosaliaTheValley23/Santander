@@ -12,7 +12,7 @@ import openpyxl
 data = pd.read_excel('/app/santander/Proyecto/data/Data_streamlit.xlsx', engine='openpyxl')
 
 st.set_page_config(page_title="Santander People Analytics", page_icon="📊")
-st.image("../Proyecto/media_stock/Banco_Santander_Logotipo.png")
+st.image("/app/santander/Proyecto/media_stock/Banco_Santander_Logotipo.png")
 st.header('TheGoodWay')
 st.markdown('---')
 
