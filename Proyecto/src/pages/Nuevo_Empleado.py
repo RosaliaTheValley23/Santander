@@ -40,7 +40,7 @@ if features_button_new:
     )
 
 
-    bars = alt.Chart(source).mark_bar(color='#FF0000').encode(
+    bars = alt.Chart(st.session_state.source).mark_bar(color='#FF0000').encode(
         x='status:Q',
         y="ID_empleado:O"
     )
