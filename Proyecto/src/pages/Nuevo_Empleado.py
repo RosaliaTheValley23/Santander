@@ -25,9 +25,9 @@ age = st.selectbox('Edad', list(range(18, 75, 1)), key='age')
 country = st.selectbox('País', ('Spain', 'Other'), key='country')
 educ = st.selectbox('Nivel educativo', ('Ninguno', 'Licenciatura', 'Grado','Máster', 'Doctorado') , key='country')
 
-features_button = st.button(label='OK', key='features_button')
+features_button_new = st.button(label='OK', key='features_button_new')
 
-if features_button:
+if features_button_new:
 
     # Horizontal stacked bar chart
     source = st.session_state.data[['ID_empleado', 'status']]
