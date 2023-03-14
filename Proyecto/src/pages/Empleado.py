@@ -6,10 +6,10 @@ import matplotlib.pyplot as plt
 import os
 import openpyxl
 
-current_dir = os.path.dirname(os.path.realpath(__file__)) 
-path_empleado = os.path.join(current_dir, 'data/Data_streamlit.xlsx')
+# current_dir = os.path.dirname(os.path.realpath(__file__)) 
+# path_empleado = os.path.join(current_dir, 'data/Data_streamlit.xlsx')
 
-data = pd.read_excel(path_empleado, engine='openpyxl')
+data = pd.read_excel('/app/santander/Proyecto/data/Data_streamlit.xlsx', engine='openpyxl')
 st.set_page_config(page_title="Santander People Analytics", page_icon="📊")
 st.image("../Proyecto/media_stock/Banco_Santander_Logotipo.png")
 st.header('TheGoodWay')
@@ -54,18 +54,18 @@ if id_button:
     st.write("Porcentaje Accuracy Upskilling")
     st.altair_chart(bars + text + rule)
 
-    certific = os.path.join(current_dir, 'data//Certificaciones.xlsx', engine='openpyxl')
-    certificaciones = pd.read_excel(certific, sheet_name="certificaciones", engine='openpyxl')
-    master = pd.read_excel(certific, sheet_name="master", engine='openpyxl')
-    idiomas = pd.read_excel(certific, sheet_name="idiomas", engine='openpyxl')
-    habilidades = pd.read_excel(certific, sheet_name="habilidades", engine='openpyxl')
+#     certific = os.path.join(current_dir, 'data//Certificaciones.xlsx', engine='openpyxl')
+#     certificaciones = pd.read_excel(certific, sheet_name="certificaciones", engine='openpyxl')
+#     master = pd.read_excel(certific, sheet_name="master", engine='openpyxl')
+#     idiomas = pd.read_excel(certific, sheet_name="idiomas", engine='openpyxl')
+#     habilidades = pd.read_excel(certific, sheet_name="habilidades", engine='openpyxl')
 
 
-    fig, ax = plt.subplots(2, 2, 
-                figsize=(14, 14))
-    ax[0][0].bar(certificaciones['Certificaciones'], certificaciones['Importacia'], color='#EA1D25' )
-    ax[0][1].bar(master['Master'], master['Importancia'], color='#EA1D25')
-    ax[1][0].bar(idiomas['idiomas'], idiomas['Importancia'], color='#EA1D25')
-    ax[1][1].bar(habilidades['Habilidades'], habilidades['Importancia'], color='#EA1D25')
+#     fig, ax = plt.subplots(2, 2, 
+#                 figsize=(14, 14))
+#     ax[0][0].bar(certificaciones['Certificaciones'], certificaciones['Importacia'], color='#EA1D25' )
+#     ax[0][1].bar(master['Master'], master['Importancia'], color='#EA1D25')
+#     ax[1][0].bar(idiomas['idiomas'], idiomas['Importancia'], color='#EA1D25')
+#     ax[1][1].bar(habilidades['Habilidades'], habilidades['Importancia'], color='#EA1D25')
 
-    st.pyplot(fig)
+#     st.pyplot(fig)
