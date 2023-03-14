@@ -30,7 +30,8 @@ features_button_new = st.button(label='OK', key='features_button_new')
 if features_button_new:
 
     # Horizontal stacked bar chart
-    source = st.session_state.data[['ID_empleado', 'status']]
+    st.session_state.source = st.session_state.data[['ID_empleado', 'status']]
+    st.session_state.source = st.session_state.source.iloc[[0,]]
     
     threshold = pd.DataFrame([{"total": 100}])
 
