@@ -8,10 +8,10 @@ import os
 current_dir = os.path.dirname(os.path.realpath(__file__)) 
 path_nuevo_empleado = os.path.join(current_dir, 'data//Data_streamlit.xlsx')
 
-data = pd.read_excel(path_nuevo_empleado)
+data = pd.read_excel(path_nuevo_empleado, engine='openpyxl')
 
 st.set_page_config(page_title="Santander People Analytics", page_icon="📊")
-st.image("../media_stock/Banco_Santander_Logotipo.png")
+st.image("../Proyecto/media_stock/Banco_Santander_Logotipo.png")
 st.header('TheGoodWay')
 st.markdown('---')
 
@@ -57,11 +57,11 @@ if features_button:
     st.write("Porcentaje Accuracy Upskilling")
     st.altair_chart(bars + text + rule)
 
-    certific = os.path.join(current_dir, 'data//Certificaciones.xlsx')
-    certificaciones = pd.read_excel(certific, sheet_name="certificaciones")
-    master = pd.read_excel(certific, sheet_name="master")
-    idiomas = pd.read_excel(certific, sheet_name="idiomas")
-    habilidades = pd.read_excel(certific, sheet_name="habilidades")
+    certific = os.path.join(current_dir, 'data//Certificaciones.xlsx', engine='openpyxl')
+    certificaciones = pd.read_excel(certific, sheet_name="certificaciones", engine='openpyxl')
+    master = pd.read_excel(certific, sheet_name="master", engine='openpyxl')
+    idiomas = pd.read_excel(certific, sheet_name="idiomas", engine='openpyxl')
+    habilidades = pd.read_excel(certific, sheet_name="habilidades", engine='openpyxl')
 
 
     fig, ax = plt.subplots(2, 2, 
