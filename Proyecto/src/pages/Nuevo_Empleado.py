@@ -23,7 +23,7 @@ st.markdown('---')
 gender = st.selectbox('Género', ('Male', 'Female', 'No answer'), key='gender')
 age = st.selectbox('Edad', list(range(18, 75, 1)), key='age')
 country = st.selectbox('País', ('Spain', 'Other'), key='country')
-educ = st.selectbox('Nivel educativo', ('Ninguno', 'Licenciatura', 'Grado','Máster', 'Doctorado') , key='country')
+educ = st.selectbox('Nivel educativo', ('Ninguno', 'Licenciatura', 'Grado','Máster', 'Doctorado') , key='educ')
 
 features_button_new = st.button(label='OK', key='features_button_new')
 
