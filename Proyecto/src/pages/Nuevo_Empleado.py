@@ -58,11 +58,11 @@ if features_button:
     st.write("Porcentaje Accuracy Upskilling")
     st.altair_chart(bars + text + rule)
 
-    certific = os.path.join(current_dir, 'data//Certificaciones.xlsx', engine='openpyxl')
-    certificaciones = pd.read_excel(certific, sheet_name="certificaciones", engine='openpyxl')
-    master = pd.read_excel(certific, sheet_name="master", engine='openpyxl')
-    idiomas = pd.read_excel(certific, sheet_name="idiomas", engine='openpyxl')
-    habilidades = pd.read_excel(certific, sheet_name="habilidades", engine='openpyxl')
+    
+    certificaciones = pd.read_excel('/app/santander/Proyecto/data/Certificaciones.xlsx', sheet_name="certificaciones", engine='openpyxl')
+    master = pd.read_excel('/app/santander/Proyecto/data/Certificaciones.xlsx', sheet_name="master", engine='openpyxl')
+    idiomas = pd.read_excel('/app/santander/Proyecto/data/Certificaciones.xlsx', sheet_name="idiomas", engine='openpyxl')
+    habilidades = pd.read_excel('/app/santander/Proyecto/data/Certificaciones.xlsx', sheet_name="habilidades", engine='openpyxl')
 
 
     fig, ax = plt.subplots(2, 2, 
